@@ -1,0 +1,22 @@
+use shodh;
+create table Table_Worker(id int primary key , firstName varchar(100) , 
+lastName varchar(100) , salary double , joiningDate varchar(100), department varchar(100));
+insert into table_worker values (1, 'Monica','Arora',10000,'2022-10-17 10:50:00','HR');
+insert into table_worker values (2, 'Shodh','Yadav',40000,'2022-09-57 10:50:00','Employee');
+insert into table_worker values (3, 'Naushad','Ali',30000,'2022-09-15 10:30:30','HMSA');
+insert into table_worker values (4, 'Rishi','Srivastava',30000,'2022-09-15 11:30:30','Strategic Sales');
+insert into table_worker values (5, 'Aman','Gupta',50000,'2022-09-16 12:30:30','Medica');
+insert into table_worker values (6, 'Navneet','Yadav',60000,'2022-09-26 12:20:10','Account');
+insert into table_worker values (7, 'Nandlal','Yadav',90000,'2021-09-26 01:20:10','Admin');
+insert into table_worker values (8, 'Arijit ','Yadav',190000,'2020-09-26 01:20:10','Sales Team Leader');
+select * from table_worker;
+select replace(firstName,'a','A') from table_worker;
+select concat(firstName, ' ', lastName) AS 'COMPLETE_NAME' from table_worker; 
+select * from table_worker order by firstName asc,department desc;
+select * from table_worker where department='Admin';
+select * from table_worker where firstName in ('Shodh','Navneet');
+select * from table_worker where firstName like '%a';
+select * from table_worker where firstName like '_____h';
+select firstName as WORKER_NAME from table_worker;
+select upper(firstName) from table_worker;
+select * from table_worker where salary between 10000 and 50000;
