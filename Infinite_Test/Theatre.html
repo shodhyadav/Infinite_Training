@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Ticket Details</title>
+
+    <style>
+      div#maincontent {
+        height: 150px;
+
+        width: 500px;
+
+        border: 1px solid #cee2fa;
+
+        text-align: left;
+
+        color: #08438e;
+
+        font-family: calibri;
+
+        font-size: 20;
+
+        padding: 5px;
+      }
+
+      div#heading {
+        text-decoration: bold;
+
+        text-align: center;
+
+        margin-top: 80px;
+
+        width: 500px;
+
+        border: 1px solid #cee2fa;
+
+        text-align: center;
+
+        color: #08438e;
+
+        background-color: #cee2fa;
+
+        font-family: calibri;
+
+        font-size: 20;
+
+        padding: 5px;
+      }
+
+      h4 {
+        padding: 0;
+
+        margin: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <input style="margin-top: 20px;" id="seats">No Of Seats
+    <br>
+    <button style="margin-top: 10px;" onclick="getPrice()">Get Detailed Price </button>
+    <div id="heading">
+      <b>Theatre Drama</b>
+    </div>
+
+    <div id="maincontent">
+      <h4>Your Ticket Details:</h4>
+      <h4 id="seatsBooked"></h4>
+      <h4 id="tickets"></h4>
+      <h4 id="discount"></h4>
+      <h4 id="afterDiscount"></h4>
+      <br />
+
+      <script>
+        const price =9;
+        function getPrice(){
+          var seats=Number(document.getElementById("seats").value);
+          console.log(seats);
+          document.getElementById("seatsBooked").innerHTML="Total number of seats booked : "+seats;
+          document.getElementById("tickets").innerHTML="Total cost of "+seats +" tickets : $"+seats*price;
+          document.getElementById("discount").innerHTML="Festive season discount is  : 10%";
+          var afterDiscount=(seats*price*10)/100;
+          var totalCostAfterDiscount=(seats*price)-afterDiscount;
+          document.getElementById("afterDiscount").innerHTML="Total cost after discount is  $: "+totalCostAfterDiscount;
+        }
+        
+        
+      </script>
+    </div>
+  </body>
+</html>
